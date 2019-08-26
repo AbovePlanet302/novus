@@ -132,21 +132,5 @@ bot.on('guildMemberRemove', member => {
     member.guild.channels.get('channelID').send('**' + member.user.username + '**, has left the server');
     //
 });
-const Discord = require("discord.js");
-
-module.exports.run = async (bot, message, args) => {
-    let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
-    .setDescription("Server Information")
-    .setColor("#15f153")
-    .setThumbnail(sicon)
-    .addField("Server Name", message.guild.name)
-    .addField("Server Owner", message.guild.owner)
-    .addField("ID", message.guild.owner.id)
-    .addField("Members", message.guild.memberCount);
-
-    message.guildCreate.send(serverembed);
-}
-});
 
 bot.login(process.env.BOT_TOKEN);

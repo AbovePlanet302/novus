@@ -1,5 +1,4 @@
 const Discord = require("discord.js");
-if(message.author.id !== config.ownerID) return;
 module.exports.run = async (bot, message, args) => {
     let sicon = message.guild.iconURL;
     let botembed = new Discord.RichEmbed()

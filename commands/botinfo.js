@@ -5,7 +5,6 @@ module.exports.run = async (bot, message, args) => {
     let botembed = new Discord.RichEmbed()
     .setTitle("Join Information")
     .setColor("#d604cf")
-    .setThumbnail(sicon)
     .addField("Server Owner", message.guild.owner)
     .addField("Name", message.guild.name)
     .addField("ID", message.guild.Id)

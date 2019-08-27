@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Members", message.guild.memberCount);
 
     message.channel.send(joinembed);
-}
+};
 
 module.exports.help = {
   name:"owner"

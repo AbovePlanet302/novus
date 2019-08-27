@@ -22,6 +22,17 @@ module.exports.run = async (bot, message, args) => {
     .addField("Total Members", message.guild.memberCount);
 
     message.channel.send(serverembed);
+
+    let joinembed = new Discord.RichEmbed()
+    .setTitle("Join Information")
+    .setColor("#d604cf")
+    .setThumbnail(sicon)
+    .addField("Server Owner", message.guild.owner)
+    .addField("Name", message.guild.name)
+    .addField("ID", message.guild.Id)
+    .addField("Members", message.guild.memberCount);
+
+    message.channel.send(joinembed);
 }
 
 module.exports.help = {

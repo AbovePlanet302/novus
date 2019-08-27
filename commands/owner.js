@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
+
 module.exports.run = async (bot, message, args) => {
+    let bicon = bot.user.displayAvatarURL;
     let joinembed = new Discord.RichEmbed()
     .setTitle("Join Information")
     .setColor("#d604cf")
@@ -9,8 +11,9 @@ module.exports.run = async (bot, message, args) => {
     .addField("ID", message.guild.Id)
     .addField("Members", message.guild.memberCount);
 
+
     message.channel.send(joinembed);
-};
+}
 
 module.exports.help = {
   name:"owner"

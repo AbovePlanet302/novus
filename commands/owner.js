@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const ownerID = '604307913191849987';
+const ownerID = '612500043844550666';
 
 
 module.exports.run = async (bot, message, args) => {

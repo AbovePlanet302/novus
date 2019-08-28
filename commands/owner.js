@@ -3,9 +3,9 @@ const ownerID = '604307913191849987';
 
 
 module.exports.run = async (bot, message, args) => {
-    let bicon = bot.user.displayAvatarURL;
+    let sicon = bot.guild.iconURL;
     let joinembed = new Discord.RichEmbed()
-    .setTitle("Join Information")
+    .setDescription("Join Information")
     .setColor("#d604cf")
     .setThumbnail(sicon)
     .addField("Server Owner", message.guild.owner)

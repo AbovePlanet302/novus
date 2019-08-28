@@ -3,7 +3,7 @@ const ownerID = '604307913191849987';
 
 
 module.exports.run = async (bot, message, args) => {
-    let sicon = bot.guild.iconURL;
+    let sicon = message.guild.iconURL;
     let joinembed = new Discord.RichEmbed()
     .setDescription("Join Information")
     .setColor("#d604cf")

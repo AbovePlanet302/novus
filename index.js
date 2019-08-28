@@ -124,13 +124,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.on('guildMemberAdd', member => {
-    member.guild.channels.get('channelID').send('**' + member.user.username + '**, has joined the server!'); 
-});
-
-bot.on('guildMemberRemove', member => {
-    member.guild.channels.get('channelID').send('**' + member.user.username + '**, has left the server');
-    //
-});
-
 bot.login(process.env.BOT_TOKEN);

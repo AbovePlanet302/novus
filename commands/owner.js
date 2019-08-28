@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const ownerID = '604307913191849987';
+
 
 module.exports.run = async (bot, message, args) => {
     let bicon = bot.user.displayAvatarURL;

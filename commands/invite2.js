@@ -11,8 +11,6 @@ module.exports.run = async (bot, message, args) => {
       message.reply("Usage: !report <user> <reason>");
       return;
     }
-    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return errors.cantfindUser(message.channel);
     let rreason = args.join(" ").slice(22);
     if(!rreason) return errors.noReason(message.channel);
 

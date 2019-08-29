@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
     if(!rreason) return errors.noReason(message.channel);
 
     let reportEmbed = new Discord.RichEmbed()
-    .setDescription("New Report")
+    .setDescription("Verification Pending")
     .setColor(orange)
     .addField("Bot Username / Prefix", rreason)
     .addField("Bot Owner", `${message.author}`);

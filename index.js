@@ -92,7 +92,7 @@ bot.on("message", async message => {
     .setColor(purple)
     .addField("New Level", curlvl + 1);
 
-    message.channel.send(lvlup).then(msg => {msg.delete(10)});
+    message.channel.send(lvlup).then(msg => {msg.delete(6)});
   }
   fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
     if(err) console.log(err)

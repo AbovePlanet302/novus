@@ -6,29 +6,19 @@ let premiumRole = message.guild.roles.find(val => val.name === 'Crystal Premium'
 let staffRole = message.guild.roles.find(val => val.name === 'Staff');
 
 if(message.member.roles.has(premiumRole) || message.member.roles.has(staffRole))
-
-    let serverembed = new Discord.RichEmbed()
-
-    .setDescription("User Profile")
-
-    .setColor("#fffc57")
-
-    .addField("Username", `**${message.author.username}**`)
-
-    .addField("Rank", "**Crystal Premium**")
-
-    .addField("Premium", "**True**");
+    
+    let joinembed = new Discord.RichEmbed()
+    .setDescription("Join Information")
+    .setColor("#d604cf")
+    .setThumbnail(sicon)
+    .addField("Username", message.author.name)
+    .addField("Rank", "Crystal Premium")
+    .addField("Premium", "True");
 
 
-
-    message.channel.send(serverembed);
-
+    message.channel.send(joinembed);
 }
 
-
-
 module.exports.help = {
-
   name:"premium"
-
 }

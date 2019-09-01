@@ -10,7 +10,6 @@ if(message.member.roles.has(premiumRole) || message.member.roles.has(staffRole))
     let joinembed = new Discord.RichEmbed()
     .setDescription("Join Information")
     .setColor("#d604cf")
-    .setThumbnail(sicon)
     .addField("Username", message.author.name)
     .addField("Rank", "Crystal Premium")
     .addField("Premium", "True");

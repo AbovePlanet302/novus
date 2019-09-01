@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+if (condition) {
 
 module.exports.run = async (bot, message, args) => {
 
@@ -20,4 +21,5 @@ if(message.member.roles.has(premiumRole) || message.member.roles.has(staffRole))
 
 module.exports.help = {
   name:"premium"
+}
 }

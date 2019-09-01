@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 let premiumRole = message.guild.roles.find(val => val.name === 'Crystal Premium');
 let staffRole = message.guild.roles.find(val => val.name === 'Staff');
 
-if(message.member.roles.has(premiumRole) || message.member.roles.has(staffRole))
+if(message.member.roles.has(premiumRole) || message.member.roles.has(staffRole));
     
     let joinembed = new Discord.RichEmbed()
     .setDescription("Join Information")

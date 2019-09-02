@@ -118,10 +118,19 @@ bot.on("message", async message => {
   setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
+  
+const Discord = require('discord.js');
 
-  if (message.content === `${prefix}user-info`) {
-    message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
-  }
+client.on('guildCreate', (guild) => {
+
+let embed = new Discord.RichEmbed()
+    .setColor('#0099ff')
+    .setTitle('New Server Join')
+    .setTimestamp()
+    .addField("Server Owner", message.guild.owner)
+    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+
+    guild.channels.get("616805846390669334").send(embed); 
 });
 
 bot.login(process.env.BOT_TOKEN);

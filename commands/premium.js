@@ -1,6 +1,4 @@
 const Discord = require("discord.js");
-if (condition) {
-
 module.exports.run = async (bot, message, args) => {
 
 let premiumRole = message.guild.roles.find(val => val.name === 'Crystal Premium');

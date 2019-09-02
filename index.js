@@ -133,4 +133,4 @@ let embed = new Discord.RichEmbed()
     guild.channels.get("616805846390669334").send(embed); 
 });
 
-bot.login(process.env.BOT_TOKEN);
+bot.login(process.env.BOT_TOKEN)

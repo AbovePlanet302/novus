@@ -1,4 +1,5 @@
 const botconfig = require("./botconfig.json");
+const tokenfile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client();
@@ -28,33 +29,8 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Crystal Development", {type: "WATCHING"})
-});
+  bot.user.setActivity("tutorials on TSC", {type: "WATCHING"});
 
-bot.on("guildCreate", (guild) => {
-  let embed = new Discord.RichEmbed()
-  .setColor('#424242')
-  .setTitle("New Server Join")
-  .setTimestamp()
-  .addField("Server Owner", guild.owner.user.username)
-  .addField("Name", guild.name)
-  .addField("ID", guild.id);
-
-  bot.channels.get("618100297230712875").send(embed);
-});
-
-bot.on("guildDelete", (guild) => {
-  let embed = new Discord.RichEmbed()
-  
-  .setColor('#424242')
-  .setTitle("Server removed")
-  .setTimestamp()
-  .addField("Server Owner", guild.owner.user.username)
-  .addField("Name", guild.name)
-  .addField("ID", guild.id);
-
-
-  bot.channels.get("618100297230712875").send(embed);
 });
 
 
@@ -117,7 +93,7 @@ bot.on("message", async message => {
     .setColor(purple)
     .addField("New Level", curlvl + 1);
 
-    message.channel.send(lvlup).then(msg => {msg.delete(10)});
+    message.channel.send(lvlup).then(msg => {msg.delete(5000)});
   }
   fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
     if(err) console.log(err)
@@ -144,9 +120,6 @@ bot.on("message", async message => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
 
-  if (message.content === `${prefix}user-info`) {
-    message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
-  }
 });
 
-bot.login("process.env.BOT_TOKEN");
+bot.login(process.env.BOT_TOKEN);

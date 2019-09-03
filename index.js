@@ -149,4 +149,4 @@ bot.on("message", async message => {
   }
 });
 
-bot.login("procsess.env.BOT_TOKEN");
+bot.login("NjE3MTAwODQ4MTExMDI2MTc2.XW2uJw.h5TzxoBgHHtq-PdGu7f4f6alBnk");

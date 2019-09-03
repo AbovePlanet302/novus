@@ -28,8 +28,33 @@ fs.readdir("./commands/", (err, files) => {
 bot.on("ready", async () => {
 
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity("Crystal Development", {type: "WATCHING"});
+  bot.user.setActivity("Crystal Development", {type: "WATCHING"})
+});
 
+bot.on("guildCreate", (guild) => {
+  let embed = new Discord.RichEmbed()
+  .setColor('#424242')
+  .setTitle("New Server Join")
+  .setTimestamp()
+  .addField("Server Owner", guild.owner.user.username)
+  .addField("Name", guild.name)
+  .addField("ID", guild.id);
+
+  bot.channels.get("618100297230712875").send(embed);
+});
+
+bot.on("guildDelete", (guild) => {
+  let embed = new Discord.RichEmbed()
+  
+  .setColor('#424242')
+  .setTitle("Server removed")
+  .setTimestamp()
+  .addField("Server Owner", guild.owner.user.username)
+  .addField("Name", guild.name)
+  .addField("ID", guild.id);
+
+
+  bot.channels.get("618100297230712875").send(embed);
 });
 
 
@@ -92,7 +117,7 @@ bot.on("message", async message => {
     .setColor(purple)
     .addField("New Level", curlvl + 1);
 
-    message.channel.send(lvlup).then(msg => {msg.delete(6)});
+    message.channel.send(lvlup).then(msg => {msg.delete(10)});
   }
   fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
     if(err) console.log(err)
@@ -118,19 +143,10 @@ bot.on("message", async message => {
   setTimeout(() => {
     cooldown.delete(message.author.id)
   }, cdseconds * 1000)
-  
-const Discord = require('discord.js');
 
-client.on('guildCreate', (guild) => {
-
-let embed = new Discord.RichEmbed()
-    .setColor('#0099ff')
-    .setTitle('New Server Join')
-    .setTimestamp()
-    .addField("Server Owner", message.guild.owner)
-    .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
-
-    guild.channels.get("616805846390669334").send(embed); 
+  if (message.content === `${prefix}user-info`) {
+    message.channel.send(`Your username: ${message.author.username}\nYour ID: ${message.author.id}`);
+  }
 });
 
-bot.login(process.env.BOT_TOKEN)
+bot.login("NjE3MTAwODQ4MTExMDI2MTc2.XWmN-A.FDs4ddowMECOMh4JcIXjmyu8pr0");
